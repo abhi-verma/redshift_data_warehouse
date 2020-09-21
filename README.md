@@ -10,12 +10,14 @@ The project uses two datasets, one for the songs metadata and other one for the 
 
 ### Data Model
 The data model resembles a star schema with one Fact table, songplays and four dimension table: users, songs, artists and time. A star schema provides the advantages of higher query performance, built-in referential integrity and ease of understanding.
+![Sparkify Data Model](img/DataModelSparkify.png?raw=true "Sparkify Data Model")
 
 ### Project Structure
 - dwh.cfg: This is a configuration file while stores host name and other database parameters for the AWS Redshift cluster. It stores the arn (Amazon Resource Name) and the paths for the S3 buckets for songs and logs datasets. The parameters are referenced by other scripts in the project.
 - sql_queries.py: This script consists of drop, create and insert statements for all the staging, fact and dimension tables. It is imported by other scripts to use the queries.
 - create_tables.py: This script is used to drop and re-create staging, fact and dimension tables.
 - etl.py: This script first copies the datasets into staging tables and then inserts data in fact and dimension tables referencing the staging tables.
+- img folder: This contains the data model image used in this readme file.
 
 ### Project Steps
 1. In a AWS account, create an IAM role with read access to S3. Copy the arn of the role and replace it in the dwh.cfg file.
