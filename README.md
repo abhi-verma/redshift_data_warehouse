@@ -10,7 +10,7 @@ The project uses two datasets, one for the songs metadata and other one for the 
 
 ### Data Model
 The data model resembles a star schema with one Fact table, songplays and four dimension table: users, songs, artists and time. A star schema provides the advantages of higher query performance, built-in referential integrity and ease of understanding.
-![Sparkify Data Model](img/DataModelSparkify.png?raw=true "Sparkify Data Model")
+![Data Model](img/DataModelSparkify.png)
 
 ### Project Structure
 - dwh.cfg: This is a configuration file while stores host name and other database parameters for the AWS Redshift cluster. It stores the arn (Amazon Resource Name) and the paths for the S3 buckets for songs and logs datasets. The parameters are referenced by other scripts in the project.
